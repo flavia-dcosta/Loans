@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary px-4 justify-content-between">
+  <div class="container">
+  <a class="navbar-brand" href="#">{{brand | translate}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+  	  
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">{{title | translate}} <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">{{menu[0] | translate}}</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">{{menu[1] | translate}}</a>
+      </li>
+    
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item active dropdown d-lg-inline-block mb-3 mb-md-0 ml-md-3" ngbDropdown>
+        <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
+          <i class="fa fa-language"></i> {{ 'Language' | translate }} <b class="caret"></b>
+        </a>
+        <div class="dropdown-menu-left" ngbDropdownMenu>
+          <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('en')">
+            {{ 'English' | translate }}
+          </a>
+          <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('fr')">
+            {{ 'French' | translate }}
+          </a>
+          <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('ur')">
+            {{ 'Urdu' | translate }}
+          </a>
+          <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('es')">
+            {{ 'Spanish' | translate }}
+          </a>
+          <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('it')">
+            {{ 'Italian' | translate }}
+          </a>
+          <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('fa')">
+            {{ 'Farsi' | translate }}
+          </a>
+          <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('de')">
+            {{ 'German' | translate }}
+          </a>
+          <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('zh-CHS')">
+            {{ 'Simplified Chinese' | translate }}
+          </a>
+        </div>
+      </li>    
+    </ul>
+  </div>
+  </div>
+</nav>
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <img [src]="images[0]" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[1]" alt="Random second slide">
+    <div class="carousel-caption">
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[2]" alt="Random third slide">
+    <div class="carousel-caption">
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>

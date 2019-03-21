@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+/* Datepicker popup icon */
+
+button.calendar, button.calendar:active {
+  width: 2.75rem;
+  background-repeat: no-repeat;
+  background-size: 23px;
+  background-position: center;
+}

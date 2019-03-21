@@ -1,0 +1,87 @@
+<div class="card">
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-primary btn-lg btn-block"  (click)="open(content)">
+            {{ButtonText[0] | translate}}
+          </button>
+        </div>
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-danger btn-lg btn-block">
+            {{ButtonText[1] | translate}}
+          </button>
+        </div>
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-info btn-lg btn-block">
+            {{ButtonText[2] | translate}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Active Loans that are active and new created loans items -->
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-4">
+      <div class="card">
+        <div class="card-header text-center font-weight-bold">
+          {{textitem[1] | translate}}
+        </div>
+        <nav class="navbar navbar-light bg-light">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+              aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-success" type="submit">{{textitem[0] | translate}}</button>
+            </div>
+          </div>
+        </nav>
+        <ang-data-table [data]='personList' [itemPerPage]='dataPerPage'>
+        </ang-data-table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Models -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
+            #dp="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="fa fa-calendar fa-2x" (click)="dp.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+
+<pre>{{closeResult}}</pre>
